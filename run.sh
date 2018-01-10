@@ -17,7 +17,9 @@ do
     do
         echo "Starting run $run at $(date)"
         [ -d bs_run ] || mkdir -p bs_run
+        pushd BlackScholes_bench
         time python bs_erf_numpy.py | tee bs_run/${cfg}_${run}.txt
+        popd
 
         [ -d numpy_run ] ||mkdir -p numpy_run
         python numpy-benchmarks/run.py -t python | tee numpy_run/${cfg}_${run}.txt

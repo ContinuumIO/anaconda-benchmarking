@@ -2,3 +2,6 @@
 	path = numpy-benchmarks
 	url = https://github.com/serge-sans-paille/numpy-benchmarks
 	branch = master
+[submodule "BlackScholes_bench"]
+	path = BlackScholes_bench
+	url = https://github.com/IntelPython/BlackScholes_bench
