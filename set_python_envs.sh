@@ -39,7 +39,7 @@ if [ "$1" == "pip3" ]; then
     [ -d $HOME/envs/pip3 ] || (
         python3 -m venv $HOME/envs/pip3
         source $HOME/envs/pip3/bin/activate
-        pip install numpy==1.13 scipy scikit-learn toolz numexpr dask performance perf
+        pip install numpy==1.13.3 scipy scikit-learn toolz numexpr dask performance perf
     )
 else
     [ -x $CONDA ] || (

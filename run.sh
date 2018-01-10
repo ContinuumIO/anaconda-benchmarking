@@ -1,5 +1,6 @@
 set -ex
 
+rm -rf *_run
 
 for cfg in pip3 anaconda3 intel3
 do
