@@ -26,6 +26,9 @@
 
 
 #export ACCEPT_INTEL_PYTHON_EULA=yes
+apt-get update
+apt-get install -y perl python3 python3-pip python3-venv
+ln -s $(ls /usr/bin/python3.*) /usr/bin/python3
 DIR=$HOME/miniconda3
 CONDA=$DIR/bin/conda
 mkdir -p $DIR
@@ -34,7 +37,7 @@ mkdir -p $HOME/envs
 # System reference
 if [ "$1" == "pip3" ]; then
     [ -d $HOME/envs/pip3 ] || (
-        python -m venv $HOME/envs/pip3
+        python3 -m venv $HOME/envs/pip3
         source $HOME/envs/pip3/bin/activate
         pip install numpy==1.13 scipy scikit-learn toolz numexpr dask performance perf
     )
