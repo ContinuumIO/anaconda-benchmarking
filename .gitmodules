@@ -1,0 +1,4 @@
+[submodule "numpy-benchmarks"]
+	path = numpy-benchmarks
+	url = https://github.com/serge-sans-paille/numpy-benchmarks
+	branch = master
