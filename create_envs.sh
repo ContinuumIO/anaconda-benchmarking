@@ -1,8 +1,6 @@
 #!/bin/bash
 set -ex
 
-mkdir -p /envs
-
 apt-get update
 apt-get install -y perl python3 python3-pip curl
 
