@@ -12,11 +12,11 @@ bash -x $fname -bfp /opt/conda
 /opt/conda/bin/conda clean -ptiy
 rm -rf Miniconda*
 
-/opt/conda/bin/conda create -y -p /envs/anaconda3 python=3.5 numpy=1.13 scipy
+/opt/conda/bin/conda create -y -p /envs/anaconda3 python=3.6 numpy=1.13 scipy
 source /envs/anaconda3/bin/activate
 /envs/anaconda3/bin/pip install performance perf
 source /envs/anaconda3/bin/deactivate
-/opt/conda/bin/conda create -y -c intel -p /envs/intel3 python=3.5 numpy=1.13 scipy
+/opt/conda/bin/conda create -y -c intel -p /envs/intel3 python=3.6 numpy=1.13 scipy
 source /envs/intel3/bin/activate
 /envs/intel3/bin/pip install performance perf
 source /envs/intel3/bin/deactivate
