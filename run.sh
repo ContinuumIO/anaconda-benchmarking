@@ -1,12 +1,14 @@
 set -ex
 
-rm -rf *_run
 ln -sf /usr/bin/python3 /usr/bin/python
 
 for cfg in pip3 anaconda3 intel3
 do
     if [ "$cfg" != "pip3" ]; then
-        source /envs/$cfg/bin/activate /envs/$cfg/
+        source /opt/conda/bin/activate /envs/$cfg/
+        conda install -y numexpr
+    else
+        pip3 install numexpr
     fi
     python3 -V
     perl hardening_check.pl $(which python3) | tee security_$cfg.txt
@@ -25,5 +27,10 @@ do
 
         [ -d python_run ] || mkdir python_run
         pyperformance run -o python_run/${cfg}_${run}.json 2>&1
+
+        [ -d mkl_run_${run} ] || mkdir mkl_run_${run}
+        pushd mkl_run_${run}
+        python3 ../mkl-optimizations-benchmarks/bench.py $cfg 2>&1
+        popd
     done
 done

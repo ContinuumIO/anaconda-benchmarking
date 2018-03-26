@@ -8,3 +8,6 @@
 [submodule "blas-benchmarks"]
 	path = blas-benchmarks
 	url = git@github.com:ContinuumIO/benchmark-suite
+[submodule "mkl-optimizations-benchmarks"]
+	path = mkl-optimizations-benchmarks
+	url = https://github.com/ContinuumIO/mkl-optimizations-benchmarks
