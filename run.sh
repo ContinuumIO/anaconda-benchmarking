@@ -22,9 +22,6 @@ do
         python3 bs_erf_numpy.py |& tee ../bs_run/${cfg}_${run}.txt
         popd
 
-        [ -d numpy_run ] || mkdir -p numpy_run
-        python3 numpy-benchmarks/run.py -t python |& tee numpy_run/${cfg}_${run}.txt
-
         [ -d python_run ] || mkdir python_run
         pyperformance run -o python_run/${cfg}_${run}.json 2>&1
 
